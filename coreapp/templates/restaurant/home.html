@@ -17,7 +17,15 @@
     ></script>
   </head>
   <body>
+    <h1>restaurant page</h1>
+    <div class="col-md-12 mb-2 text-center">
+      <h4>Welcom User {{user.username}}</h4>
+      <form action="{% url 'restaurant_sign_out' %} " method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">logout</button>
+      </form>
+    </div>
     hello foodtasker
-    <button class="btn btn-primiry">bootstrap 4 button</button>
+    <button class="btn btn-primary">bootstrap 4 button</button>
   </body>
 </html>
