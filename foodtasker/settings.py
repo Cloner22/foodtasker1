@@ -136,9 +136,6 @@ cloudinary.config(
     api_key = "828323811385179",
     api_secret = "GAzd-yWTX-kQgJHYAIjpMJyEbWE",
 )
-
-# CLOUDINARY = {
-#     'cloud_name': 'dlcjurxes',
-#     'api_key': '828323811385179',
-#     'api_secret': 'GAzd-yWTX-kQgJHYAIjpMJyEbWE',
-# }
+# config django app for heroku
+import django_heroku
+django_heroku.setting(locals())
