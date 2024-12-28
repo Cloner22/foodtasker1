@@ -39,4 +39,3 @@ def restaurant_sign_up(request):
         "user_form" : user_form ,
         "restaurant_form": restaurant_form
     } )
-    
