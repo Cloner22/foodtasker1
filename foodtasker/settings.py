@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'foodtasker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',  # یا هر موتور دیگر
-        'NAME': 'postgres',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
+        'PASSWORD': 'QIDhilPDxaXLVQbUqlPBcvWDHFantNzC',
+        'HOST': 'postgres.railway.internal',
         'PORT': 5432,  # پیش‌فرض: 5432 برای PostgreSQL
     }
 }
