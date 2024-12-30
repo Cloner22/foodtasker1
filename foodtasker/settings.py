@@ -77,9 +77,22 @@ WSGI_APPLICATION = 'foodtasker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',  # یا هر موتور دیگر
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'QIDhilPDxaXLVQbUqlPBcvWDHFantNzC',
+        'HOST': 'postgres.railway.internal',
+        'PORT': 5432,  # پیش‌فرض: 5432 برای PostgreSQL
     }
+}
+
+import os
+import dj_database_url
+
+DATABASES = {
+    'default': dj_database_url.config(
+        default=os.getenv('postgresql://postgres:QIDhilPDxaXLVQbUqlPBcvWDHFantNzC@postgres.railway.internal:5432/railway')
+    )
 }
 
 
@@ -143,11 +156,4 @@ cloudinary.config(
 
 
 # # config django app for railway
-ALLOWED_HOSTS = ['.railway.app', 'localhost'] 
-
-import dj_database_url
-import os
-
-DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-}
+ALLOWED_HOSTS = ['.railway.app', 'localhost']
