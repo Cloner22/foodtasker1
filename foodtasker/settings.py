@@ -89,14 +89,16 @@ WSGI_APPLICATION = 'foodtasker.wsgi.application'
 import os
 import dj_database_url
 
+# استفاده از dj_database_url برای تنظیم پایگاه داده
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('postgresql://postgres:QIDhilPDxaXLVQbUqlPBcvWDHFantNzC@postgres.railway.internal:5432/railway')
+        default=os.getenv('DATABASE_URL', 'postgres://postgres:QIDhilPDxaXLVQbUqlPBcvWDHFantNzC@postgres.railway.internal:5432/railway')
     )
 }
 
 # # config django app for railway
 ALLOWED_HOSTS = ['.railway.app', 'localhost']
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -151,9 +153,7 @@ cloudinary.config(
     api_key = "828323811385179",
     api_secret = "GAzd-yWTX-kQgJHYAIjpMJyEbWE",
 )
-# # config django app for heroku
-# import django_heroku
-# django_heroku.setting(locals())
+
 
 
 
