@@ -92,9 +92,11 @@ import dj_database_url
 # استفاده از dj_database_url برای تنظیم پایگاه داده
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL', 'postgres://postgres:QIDhilPDxaXLVQbUqlPBcvWDHFantNzC@postgres.railway.internal:5432/railway')
+        default=os.getenv('DATABASE_URL', 'postgresql://postgres:QIDhilPDxaXLVQbUqlPBcvWDHFantNzC@postgres.railway.internal:5432/railway')
+        # <username>:<password>@<host>:<port>/<dbname>
     )
 }
+
 
 # # config django app for railway
 ALLOWED_HOSTS = ['.railway.app', 'localhost']
