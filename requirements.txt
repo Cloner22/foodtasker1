@@ -7,9 +7,13 @@ django-heroku==0.3.1
 gunicorn==23.0.0
 packaging==24.2
 psycopg2==2.9.10
+psycopg2-binary==2.9.10
+railway==0.0.4
+setuptools==75.6.0
 six==1.17.0
 sqlparse==0.5.3
 typing_extensions==4.12.2
 tzdata==2024.2
 urllib3==2.3.0
+wheel==0.45.1
 whitenoise==6.8.2

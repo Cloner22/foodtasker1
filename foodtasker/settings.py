@@ -136,6 +136,18 @@ cloudinary.config(
     api_key = "828323811385179",
     api_secret = "GAzd-yWTX-kQgJHYAIjpMJyEbWE",
 )
-# config django app for heroku
-import django_heroku
-django_heroku.setting(locals())
+# # config django app for heroku
+# import django_heroku
+# django_heroku.setting(locals())
+
+
+
+# # config django app for railway
+ALLOWED_HOSTS = ['.railway.app', 'localhost'] 
+
+import dj_database_url
+import os
+
+DATABASES = {
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+}
