@@ -92,7 +92,7 @@ import dj_database_url
 # استفاده از dj_database_url برای تنظیم پایگاه داده
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL', 'postgresql://postgres:HEvzqgwzgsTCWZVxdQsWeoZQCpQFhNeD@postgres.railway.internal:5432/railway')
+        default=os.getenv('DATABASE_URL', 'postgresql://postgres:1234@postgres.railway.internal:5432/railway')
         # <username>:<password>@<host>:<port>/<dbname>
     )
 }
