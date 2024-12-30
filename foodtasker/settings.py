@@ -74,20 +74,20 @@ WSGI_APPLICATION = 'foodtasker.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'mWxijcBApEHVabPldfkmAPoJbQdtODZr',
+        'HOST': 'postgres.railway.internal',  # یا 'junction.proxy.rlwy.net'
+        'PORT': '5432',  # یا پورتی که Railway مشخص کرده
+    }
+}
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',  # یا هر موتور دیگر
-#         'NAME': 'railway',
-#         'USER': 'postgres',
-#         'PASSWORD': 'QIDhilPDxaXLVQbUqlPBcvWDHFantNzC',
-#         'HOST': 'postgres.railway.internal',
-#         'PORT': 5432,  # پیش‌فرض: 5432 برای PostgreSQL
-#     }
-# }
 
-import os
-import dj_database_url
+# import os
+# import dj_database_url
 
 # استفاده از dj_database_url برای تنظیم پایگاه داده
 # DATABASES = {
