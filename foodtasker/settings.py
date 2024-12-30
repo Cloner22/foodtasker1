@@ -80,8 +80,8 @@ DATABASES = {
         'NAME': 'railway',
         'USER': 'postgres',
         'PASSWORD': 'mWxijcBApEHVabPldfkmAPoJbQdtODZr',
-        'HOST': 'postgres.railway.internal',  # یا 'junction.proxy.rlwy.net'
-        'PORT': '5432',  # یا پورتی که Railway مشخص کرده
+        'HOST': 'junction.proxy.rlwy.net',  # یا 'junction.proxy.rlwy.net'
+        'PORT': '32182',  # یا پورتی که Railway مشخص کرده
     }
 }
 
