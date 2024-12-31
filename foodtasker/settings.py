@@ -99,7 +99,7 @@ DATABASES = {
 
 
 # # config django app for railway
-ALLOWED_HOSTS = ['.railway.app', 'localhost']
+ALLOWED_HOSTS = ['.railway.app', 'localhost','127.0.0.1']
 
 
 # Password validation
