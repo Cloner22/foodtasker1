@@ -91,11 +91,12 @@ DATABASES = {
 ALLOWED_HOSTS = ['.railway.app', 'localhost','127.0.0.1','foodtasker1-production.up.railway.app']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://foodtasker1-production.up.railway.app',
-    '.railway.app', 
-    'localhost',
-    '127.0.0.1',
+    'https://railway.app',
+    'http://127.0.0.1',
+    'http://localhost',
+    'https://foodtasker1-production.up.railway.app',  # آدرس کامل دامنه شما
 ]
+
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
