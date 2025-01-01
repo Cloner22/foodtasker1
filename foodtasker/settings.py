@@ -92,7 +92,11 @@ ALLOWED_HOSTS = ['.railway.app', 'localhost','127.0.0.1','foodtasker1-production
 
 CSRF_TRUSTED_ORIGINS = [
     'https://foodtasker1-production.up.railway.app',
-    'https://<your-custom-domain>',
+    '.railway.app', 
+    'localhost',
+    '127.0.0.1',
+    
+    
 ]
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
