@@ -90,6 +90,14 @@ DATABASES = {
 
 ALLOWED_HOSTS = ['.railway.app', 'localhost','127.0.0.1','foodtasker1-production.up.railway.app']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://foodtasker1-production.up.railway.app',
+    'https://<your-custom-domain>',
+]
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 # import os
 # import dj_database_url
