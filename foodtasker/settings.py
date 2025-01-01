@@ -49,7 +49,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 ROOT_URLCONF = 'foodtasker.urls'
 
@@ -85,6 +88,8 @@ DATABASES = {
     }
 }
 
+ALLOWED_HOSTS = ['.railway.app', 'localhost','127.0.0.1','foodtasker1-production.up.railway.app']
+
 
 # import os
 # import dj_database_url
@@ -99,7 +104,6 @@ DATABASES = {
 
 
 # # config django app for railway
-ALLOWED_HOSTS = ['.railway.app', 'localhost','127.0.0.1']
 
 
 # Password validation
@@ -135,8 +139,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
+import os
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # مسیر برای ذخیره فایل‌های استاتیک
+
+DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
