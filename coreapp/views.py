@@ -3,9 +3,18 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate , login
 from django.contrib.auth.models import User
 from coreapp.forms import UserForm,RestaurantForm
+from django.http import JsonResponse
+
 # Create your views here.
+# def home(request):
+#     return redirect(restaurant_home)
+#     return JsonResponse({"message": "Welcome to the SuperTokens API"})
+
 def home(request):
-    return redirect(restaurant_home)
+    if request.user.is_authenticated:  # بررسی وضعیت لاگین کاربر
+        return redirect(restaurant_home)
+    return JsonResponse({"message": "Welcome to the SuperTokens API"})
+
 
 
 @login_required(login_url='/restaurant/sign_in/')
@@ -39,3 +48,6 @@ def restaurant_sign_up(request):
         "user_form" : user_form ,
         "restaurant_form": restaurant_form
     } )
+    
+    
+

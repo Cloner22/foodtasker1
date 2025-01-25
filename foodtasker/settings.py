@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'supertokens_python.framework.django.middleware.Middleware'
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -176,6 +177,38 @@ cloudinary.config(
     api_secret = "GAzd-yWTX-kQgJHYAIjpMJyEbWE",
 )
 
+# #Google aute
+# from supertokens_python import init, InputAppInfo, SupertokensConfig
+# from supertokens_python.recipe import thirdparty, session
+# from supertokens_python.recipe.thirdparty.providers.google import Google
 
+# # تنظیمات SuperTokens
+# init(
+#     app_info=InputAppInfo(
+#         app_name="My Django App",
+#         api_domain="http://localhost:8000",  # دامنه API شما
+#         website_domain="http://localhost:3000",  # دامنه وبسایت شما
+#     ),
+#     supertokens_config=SupertokensConfig(
+#         connection_uri="http://localhost:3567"  # آدرس SuperTokens Core
+#     ),
+#     framework="django",
+#     recipe_list=[
+#         thirdparty.init(
+#             sign_in_and_up_feature=thirdparty.SignInAndUpFeature(
+#                 providers=[
+#                     Google(
+#                         client_id="456983860967-fodie9mp7le40rharpiq8vm150g4po8f.apps.googleusercontent.com",  # مقدار Client ID شما
+#                         client_secret="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",  # مقدار Client Secret شما
+#                     ),
+#                 ]
+#             )
+#         ),
+#         session.init(),  # تنظیمات مربوط به مدیریت سشن‌ها
+#     ],
+# )
 
+from supertokens_config import configure_supertokens
+
+configure_supertokens()
 

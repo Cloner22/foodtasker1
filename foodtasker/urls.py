@@ -15,11 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path ,include
 from django.contrib.auth import views as auth_view
 from coreapp import views
 from django.conf import settings
 from django.conf.urls.static import static
+from supertokens_python.framework.django import get_all_routes
+
 
 
 urlpatterns = [
@@ -38,3 +40,14 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+urlpatterns = [
+    path("", include("coreapp.urls")),
+]
+
+
+urlpatterns = [
+    
+    path("auth/", get_all_routes()),
+]
