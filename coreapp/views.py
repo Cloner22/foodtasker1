@@ -11,9 +11,7 @@ from django.http import JsonResponse
 #     return JsonResponse({"message": "Welcome to the SuperTokens API"})
 
 def home(request):
-    if request.user.is_authenticated:  # بررسی وضعیت لاگین کاربر
-        return redirect(restaurant_home)
-    return JsonResponse({"message": "Welcome to the SuperTokens API"})
+    return redirect(restaurant_home)
 
 
 
