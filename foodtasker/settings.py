@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+SITE_ID = 1 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,7 +43,22 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'coreapp',
     'cloudinary',
+    "django.contrib.sites",
+    "allauth",
+    'allauth.account', 
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',   
 ]
+
+SOCIALACCOUNT_PROVIDERS ={
+    "google" : {
+        "SCOPE": [
+            "profile",
+            "email",
+        ],
+        "AUTH_PARMAS" : {"access_type" : "online" }
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -52,6 +69,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    "allauth.account.middleware.AccountMiddleware"
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -165,8 +183,16 @@ DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.Modelbackend",
+    "allauth.accounts.auth_backends.AuthenticationBackend"
+)
 
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+
+
 
 import cloudinary
 import cloudinary.uploader
@@ -177,3 +203,4 @@ cloudinary.config(
     api_key = "828323811385179",
     api_secret = "GAzd-yWTX-kQgJHYAIjpMJyEbWE",
 )
+

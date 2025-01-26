@@ -14,7 +14,6 @@ def home(request):
     return redirect(restaurant_home)
 
 
-
 @login_required(login_url='/restaurant/sign_in/')
 def restaurant_home(request):
     return render(request,'restaurant/home.html', {} )

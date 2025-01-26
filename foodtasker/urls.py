@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path 
+from django.urls import path , include
 from django.contrib.auth import views as auth_view
 from coreapp import views
 from django.conf import settings
@@ -28,6 +28,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name = 'home'),
+    # path('', include('googleauthentication.urls')),
+    path('accounts/', include('allauth.urls')),
+    path('/', include('coreapp.urls')),
+    
     
     path('restaurant/sign_in/',auth_view.LoginView.as_view(template_name = 'restaurant/sign_in.html') , name = 'restaurant_sign_in'),
     path('restaurant/sign_out/',auth_view.LogoutView.as_view(next_page = '/') , name = 'restaurant_sign_out'),
