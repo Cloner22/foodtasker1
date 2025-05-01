@@ -1,0 +1,7 @@
+# created by virtualenv automatically
+*
+!.gitignore
+!coreapp/
+!coreapp/urls.py
+!manage.py
+!requirements.txt
