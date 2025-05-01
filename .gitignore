@@ -5,3 +5,4 @@
 !coreapp/urls.py
 !manage.py
 !requirements.txt
+!nixpacks.toml
