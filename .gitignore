@@ -5,4 +5,4 @@
 !coreapp/urls.py
 !manage.py
 !requirements.txt
-!wsgi.py
+!foodtasker/wsgi.py
