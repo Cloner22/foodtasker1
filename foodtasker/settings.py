@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-oidm!4c0qb-rhqc06-lap@)(376(*z*layl%+b8wkvf#dm^6gc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -184,9 +184,10 @@ DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTHENTICATION_BACKENDS = (
-    "django.contrib.auth.backends.Modelbackend",
-    "allauth.accounts.auth_backends.AuthenticationBackend"
+    "django.contrib.auth.backends.ModelBackend",  # ✔️
+    "allauth.account.auth_backends.AuthenticationBackend",  # ✔️
 )
+
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
