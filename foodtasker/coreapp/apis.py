@@ -11,6 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 # RESTAURANT
 # ==========
 
+
 def restaurant_order_notification (request,last_request_time):
     notification = Order.objects.filter(
         restaurant  = request.user.restaurant,
